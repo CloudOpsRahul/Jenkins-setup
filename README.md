@@ -10,12 +10,13 @@ Is the practice of automatically building, testing, and preparing code changes f
 Goes one step further by automatically deploying every change that passes through the pipeline to production, without human intervention. This practice is more common in environments where rapid and frequent releases are essential.
 
 ## Install Jenkins in ec2 machine use t2.large
-Install first java for jenkins in ubuntu in ec2
+First install java for jenkins in ubuntu in ec2
 ```bash
   sudo apt update
   sudo apt install fontconfig openjdk-17-jre
+  java --version #Check Java Install or not
 ```
-## Install Jenkins longterm support for stable version
+Install Jenkins longterm support for stable version
 ```bash
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -38,3 +39,4 @@ You can check the status of the Jenkins service using the command:
 ```bash
 sudo systemctl status jenkins
 ```
+Go to Security group, edit inbound rules add custom TCP Select Port range 8080 & anywhere-IPv4 Save it.
