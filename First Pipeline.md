@@ -20,8 +20,9 @@ https://github.com/LondheShubham153/django-notes-app.git
 ```
 In Branch Specifier (blank for 'any') write main branch
 
-🔘 In Build Triggers tick on 
-GitHub hook trigger for GITScm polling
+🔘 In Build Triggers section tick on 
+GitHub hook trigger for GITScm polling <br>
+
 🔘 In Build Steps select Execute shell option and write the below freestyle pipeline.
 ```bash
 echo "**********CI/CD PIPELINE*************"
@@ -29,6 +30,7 @@ echo "build docker image from Dockerfile"
 docker built -t django-todo-image:latest .
 echo "build using docker compose"
 docker-compose up -d
+echo "code build done using docker"
 ```
 🔘
 
