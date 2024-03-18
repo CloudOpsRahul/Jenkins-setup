@@ -1,6 +1,6 @@
 # Jenkins
  ## What is Jenkins?
-     Jenkins is an open-source automation server that helps automate the process of building, testing, and deploying software. It allows you to set up pipelines to automatically build your code, run tests, and deploy applications to various environments. Jenkins is highly extensible and can be integrated with a wide range of tools and plugins to support continuous integration and continuous delivery (CI/CD) workflows.
+Jenkins is an open-source automation server that helps automate the process of building, testing, and deploying software. It allows you to set up pipelines to automatically build your code, run tests, and deploy applications to various environments. Jenkins is highly extensible and can be integrated with a wide range of tools and plugins to support continuous integration and continuous delivery (CI/CD) workflows.
 
   ## Continuous Integration (CI) : 
   Is the practice of frequently integrating code changes into a shared repository. Each integration is verified by automated build and test processes, allowing teams to detect and fix problems early.
