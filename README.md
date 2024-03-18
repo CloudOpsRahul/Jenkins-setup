@@ -40,12 +40,15 @@ You can check the status of the Jenkins service using the command:
 sudo systemctl status jenkins
 ```
 🔘 Go to Security group, edit inbound rules add custom TCP Select Port range 8080 & anywhere-IPv4 Save it.
+
 🔘 Go to web browser and paste public-ip with port 8080.
+
 🔘 For password:
 ```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 🔘 Select install plugin.
+
 🔘 Fill the form & Save it.
 
 ## Also install docker and docker-compose on ec2 machine.
