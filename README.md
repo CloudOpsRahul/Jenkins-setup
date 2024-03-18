@@ -66,7 +66,15 @@ You can check the status of the Docker service using the command:
 ```bash
 sudo systemctl status docker
 ```
-
+## Add ubuntu and jenkins in docker group
+```bash
+sudo usermod -aG docker $USER
+sudo usermod -aG docker jenkins
+```
+## Reboot the system 
+```bash
+sudo reboot
+```
 
 
 
