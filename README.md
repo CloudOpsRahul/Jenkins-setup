@@ -11,5 +11,7 @@ Goes one step further by automatically deploying every change that passes throug
 
 ## Install Jenkins in ec2 machine use t2.large
 Install first java for jenkins in ubuntu in ec2
+```bash
   sudo apt update
   sudo apt install fontconfig openjdk-17-jre
+```
