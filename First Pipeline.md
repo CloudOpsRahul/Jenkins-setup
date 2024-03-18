@@ -11,12 +11,12 @@
 
 🔘 Tick on Github project and in project url paste the below link:
 ```bash
-https://github.com/LondheShubham153/django-notes-app.git
+https://github.com/CloudOpsRahul/django-notes-app.git
 ```
 🔘 In Source code management section select Git option 
 Paste the url:
 ```bash
-https://github.com/LondheShubham153/django-notes-app.git
+https://github.com/CloudOpsRahul/django-notes-app.git
 ```
 In Branch Specifier (blank for 'any') write main branch
 
