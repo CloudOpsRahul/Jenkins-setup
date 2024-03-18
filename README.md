@@ -47,3 +47,36 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 #### Select install plugin.
 #### Fill the form & Save it.
+
+## Also install docker and docker-compose on ec2 machine.
+To install docker and docker-compose:
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose -y
+```
+You can enable the Docker service to start at boot with the command:
+```bash
+sudo systemctl enable docker
+```
+You can start the Docker service with the command:
+```bash
+sudo systemctl start docker
+```
+You can check the status of the Docker service using the command:
+```bash
+sudo systemctl status docker
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
