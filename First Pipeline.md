@@ -32,6 +32,14 @@ echo "build using docker compose"
 docker-compose up -d
 echo "code build done using docker"
 ```
-🔘
+
+🔘 Click on Save button.
+
+🔘 Click on Build Now. And check build history, open the particular build history in console output
+
+🔘 Check the console successfully done
+
+
+
 
 
