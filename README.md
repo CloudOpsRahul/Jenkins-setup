@@ -15,3 +15,26 @@ Install first java for jenkins in ubuntu in ec2
   sudo apt update
   sudo apt install fontconfig openjdk-17-jre
 ```
+## Install Jenkins longterm support for stable version
+```bash
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+```
+## Start Jenkins
+You can enable the Jenkins service to start at boot with the command:
+```bash
+sudo systemctl enable jenkins
+```
+You can start the Jenkins service with the command:
+```bash
+sudo systemctl start jenkins
+```
+You can check the status of the Jenkins service using the command:
+```bash
+sudo systemctl status jenkins
+```
