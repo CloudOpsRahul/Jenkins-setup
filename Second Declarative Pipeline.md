@@ -77,5 +77,18 @@ pipeline {
   - In ID give name to your dockerhub cred to id name i.e., DockerHubCreds
   - In Description enter DockerHubCreds.
   - Click on Create button.
+  - Dockerhub Credentials are add successfully in jenkins.
 
-
+🔘 Pipeline code for DockerhubCredentials.
+```bash
+ stage("Push image to Private Docker Hub Repo"){
+            steps{
+                withCredentials([usernamePassword(credentialsId:"DockerHubCreds",passwordVariable:"dockerPass",usernameVariable:"dockerUser")]){
+                sh "docker login -u ${env.dockerUser} -p ${env.dockerPass}"
+                sh "docker tag node-app:latest ${env.dockerUser}/node-app:latest"
+                sh "docker push ${env.dockerUser}/node-app:latest"
+                }
+                
+            }
+        }
+```
