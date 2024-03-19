@@ -38,7 +38,7 @@ pipeline {
                         echo "CODE TEST SUCCESSFULLY"
         }
     }
-          stage("Push to Private Docker Hub Repo"){
+          stage("Push Image to Private Docker Hub Repo"){
             steps{
                 withCredentials([usernamePassword(credentialsId:"DockerHubCreds",passwordVariable:"dockerPass",usernameVariable:"dockerUser")]){
                 sh "docker login -u ${env.dockerUser} -p ${env.dockerPass}"
@@ -61,3 +61,21 @@ pipeline {
 🔘 Click on Save button.
 
 🔘 Click on Build Now option.
+
+## Setup DockerHub Credentials in jenkins
+🔘 Go to Dashboard and select Manage Jenkins option.
+
+🔘 In Security section click on Credentials option.
+
+🔘 Click on global then click on Add Credentials Button.
+
+🔘 New Credentials form open fill the form 
+  - In kind select username & password.
+  - In scope select Global.
+  - In Username enter your docker hub account username.
+  - In Password enter your docker hub account password.
+  - In ID give name to your dockerhub cred to id name i.e., DockerHubCreds
+  - In Description enter DockerHubCreds.
+  - Click on Create button.
+
+
