@@ -18,7 +18,53 @@ GitHub hook trigger for GITScm polling <br>
 
 🔘 Now in Pipeline section, write pipeline script:
 ```bash
-
+pipeline {
+    agent any
+    stages{
+    stage("CODE"){
+        steps{
+            git url : "https://github.com/CloudOpsRahul/node-todo-cicd.git" , branch: "master"
+            echo "CODE CLONE SUCCESSFULLY"
+        }
+    }
+    stage("BUILD"){
+         steps{
+             sh "docker build -t node-app:latest ."
+                        echo "CODE BUILD SUCCESSFULLY"
+        }
+    }
+    stage("TEST"){
+         steps{
+                        echo "CODE TEST SUCCESSFULLY"
+        }
+    }
+    stage("PUSH TO PRIVATE DOCKER HUB REPO"){
+         steps{
+                        echo "DOcker image push SUCCESSFULLY"
+        }
+    }
+    stage("SONAR"){
+         steps{
+                        echo "CODE BUILD SUCCESSFULLY"
+        }
+    }
+    stage("OWASP"){
+         steps{
+                        echo "CODE BUILD SUCCESSFULLY"
+        }
+    }
+    stage("TRIVY"){
+         steps{
+                        echo "CODE BUILD SUCCESSFULLY"
+        }
+    }
+    stage("DEPLOY"){
+         steps{
+                        echo "APP DEPLOYED SUCCESSFULLY"
+        }
+    }
+    }
+}
 ```
 🔘 Click on Save button.
 
