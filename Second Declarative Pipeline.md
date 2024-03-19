@@ -38,33 +38,25 @@ pipeline {
                         echo "CODE TEST SUCCESSFULLY"
         }
     }
-    stage("PUSH TO PRIVATE DOCKER HUB REPO"){
-         steps{
-                        echo "DOcker image push SUCCESSFULLY"
+          stage("Push to Private Docker Hub Repo"){
+            steps{
+                withCredentials([usernamePassword(credentialsId:"DockerHubCreds",passwordVariable:"dockerPass",usernameVariable:"dockerUser")]){
+                sh "docker login -u ${env.dockerUser} -p ${env.dockerPass}"
+                sh "docker tag node-app:latest ${env.dockerUser}/node-app:latest"
+                sh "docker push ${env.dockerUser}/node-app:latest"
+                }
+                
+            }
         }
-    }
-    stage("SONAR"){
-         steps{
-                        echo "CODE BUILD SUCCESSFULLY"
-        }
-    }
-    stage("OWASP"){
-         steps{
-                        echo "CODE BUILD SUCCESSFULLY"
-        }
-    }
-    stage("TRIVY"){
-         steps{
-                        echo "CODE BUILD SUCCESSFULLY"
-        }
-    }
+  
     stage("DEPLOY"){
          steps{
+            sh "docker-compose up -d"
                         echo "APP DEPLOYED SUCCESSFULLY"
         }
     }
     }
-}
+}    
 ```
 🔘 Click on Save button.
 
