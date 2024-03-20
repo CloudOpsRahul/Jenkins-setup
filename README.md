@@ -14,7 +14,7 @@ First install java for jenkins in ubuntu in ec2
 ```bash
   sudo apt update
   sudo apt install fontconfig openjdk-17-jre
-  java --version #Check Java Install or not
+
 ```
 Install Jenkins longterm support for stable version
 ```bash
