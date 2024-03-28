@@ -143,7 +143,11 @@ Manage Jenkins-> Tools-> SonarQube Scanner Installations-> Add SonarQube Scanner
 - Name: Sonar 
 - Save
 
+◼️Add OWASP tool in Jenkins:
 
+Manage Jenkins-> Tools-> Dependency-Check installations
+
+Select Install from Github.com and it will take version.
 
 
 
