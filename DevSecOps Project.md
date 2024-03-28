@@ -98,7 +98,7 @@ Initially username and password will be ‘ admin’ , ’ admin’. Just change
 Whatever token generated, just copy and paste to somewhere else. Once window is closed, you wont be able to see that again.
 
 ◼️Create a webhook in SonarQube server: Administration-> Configuration-> Webhook-> Create
-In URL enter the jenkins url "ip:8080/sonarqube-webhook/"
+ - In URL enter the jenkins url "ip:8080/sonarqube-webhook/"
 
 
 ◼️Now Add SonarQube Credentials to Jenkins:
