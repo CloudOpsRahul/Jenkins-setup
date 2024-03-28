@@ -93,7 +93,7 @@ Plugins - SonarQube Scanner, Sonar Quality Gates, OWASP Dependency-Check, Docker
 
 Initially username and password will be ‘ admin’ , ’ admin’. Just change with a new password.
 
-◼️Create users token in SonarQube: Generate a token for authentication purposes. Click on Administration tab-> Security-> Users-> create Token name as jenkins.
+◼️Create users token in SonarQube server: Generate a token for authentication purposes. Click on Administration tab-> Security-> Users-> create Token name as jenkins.
 
 Whatever token generated, just copy and paste to somewhere else. Once window is closed, you wont be able to see that again.
 
