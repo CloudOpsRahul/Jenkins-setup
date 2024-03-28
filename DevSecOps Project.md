@@ -133,9 +133,9 @@ Description- DockerHub Credentials.
 
 Manage Jenkins-> System-> SonarQube Servers-> SonarQube Installations-> Add SonarQube
 
-Name : Sonar
-Server URL:http://ipaddress:9000
-Server authentication token: Sonar (Sonarqube server saved credentials).
+- Name : Sonar
+- Server URL:http://ipaddress:9000
+- Server authentication token: Sonar (Sonarqube server saved credentials).
 
 
 
