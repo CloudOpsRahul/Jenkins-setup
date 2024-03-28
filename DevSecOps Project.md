@@ -158,17 +158,18 @@ Configuration-> GitHub Project(Github url)-> Build Trigger(Github hook trigger)
 Select Pipeline script-> Paste Pipeline Syntax.
 
 ```bash
-pipeline {
 
+pipeline {
+    
     agent any
-     environment{
+    environment{
         SONAR_HOME = tool "Sonar"
     }
     stages {
-
+        
         stage("Code"){
             steps{
-                git url: "https://github.com/mandgepratik/node-todo-cicd.git" , branch: "master"
+                git url: "https://github.com/LondheShubham153/node-todo-cicd.git" , branch: "master"
                 echo "Code Cloned Successfully"
             }
         }
@@ -186,32 +187,31 @@ pipeline {
                }
             }
         }
-        stage("Build & Test"){
-            steps{
-                sh 'docker build -t node-app:latest .'
-                echo "Code Built & Test Successfully"
-            }
-        }
         stage("OWASP"){
             steps{
                 dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'OWASP'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
-        stage("Trivy"){
+        stage("Build & Test"){
             steps{
-                sh "trivy image node-app"
-                echo "Image Scanned Successfully"
+                sh 'docker build -t node-app-batch-6:latest .'
+                echo "Code Built Successfully"
             }
         }
-       stage("Push to Private Docker Hub Repo"){
+        stage("Trivy"){
             steps{
-                withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerPass",usernameVariable:"dockerUser")]){
+                sh "trivy image node-app-batch-6"
+            }
+        }
+        stage("Push to Private Docker Hub Repo"){
+            steps{
+                withCredentials([usernamePassword(credentialsId:"DockerHubCreds",passwordVariable:"dockerPass",usernameVariable:"dockerUser")]){
                 sh "docker login -u ${env.dockerUser} -p ${env.dockerPass}"
-                sh "docker tag node-app:latest ${env.dockerUser}/node-app:latest"
-                sh "docker push ${env.dockerUser}/node-app:latest"
+                sh "docker tag node-app-batch-6:latest ${env.dockerUser}/node-app-batch-6:latest"
+                sh "docker push ${env.dockerUser}/node-app-batch-6:latest"
                 }
-
+                
             }
         }
         stage("Deploy"){
