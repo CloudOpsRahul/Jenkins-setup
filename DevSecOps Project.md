@@ -224,7 +224,13 @@ pipeline {
 }
 ```
 
+◼️Save & Build Now
 
+The Stages Box sequence will show as per your code.
+
+◼️To access App:PublicIP:8000
+
+◼️Completed.
 
 
 
