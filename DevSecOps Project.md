@@ -85,6 +85,56 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 ◼️Copy the password and paste to jenkins. & Create your Jenkins account.
 
+◼️Install SonarQube, OWASP, Docker plugins in Jenkins:
+- Goto Dashboard-->Manage Jenkins-->Plugins
+Plugins - SonarQube Scanner, Sonar Quality Gates, OWASP Dependency-Check, Docker.
+
+◼️Access SonarQube Server: To access server just use http://<publicIP>:9000
+
+Initially username and password will be ‘ admin’ , ’ admin’. Just change with a new password.
+
+◼️Create users token in SonarQube: Generate a token for authentication purposes. Click on Administration tab-> Security-> Users-> create Token name as jenkins.
+
+Whatever token generated, just copy and paste to somewhere else. Once window is closed, you wont be able to see that again.
+
+◼️Create a webhook in SonarQube server: Administration-> Configuration-> Webhook-> Create
+In URL enter the jenkins url "ip:8080/sonarqube-webhook/"
+
+
+◼️Now Add SonarQube Credentials to Jenkins:
+
+Manage Jenkins-> Credentials-> Add SonarQube Credential
+
+Kind -Secret Text
+
+Scope- Global (Jenkins nodes..)
+
+Secret- Token generated from sonarqube.
+
+ID- Sonar
+
+Description- Sonar
+
+◼️Also Add DockerHub Credentials:
+
+Kind- ‘Username with Password‘
+
+Scope- Global (Jenkins nodes..)
+
+Username- your DockerHub Username
+
+Password- your DockerHub Password
+
+ID- dockerHub
+
+Description- DockerHub Credentials.
+
+
+
+
+
+
+
 
 
 
