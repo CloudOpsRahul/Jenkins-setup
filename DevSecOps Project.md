@@ -139,7 +139,7 @@ Manage Jenkins-> System-> SonarQube Servers-> SonarQube Installations-> Add Sona
 
 ◼️Add or Enable SonarQube Scanner tool in Jenkins:
 
-Manage Jenkins-> Tools-> SonarQube Scanner Installations-> Add SoanrQube Scanner
+Manage Jenkins-> Tools-> SonarQube Scanner Installations-> Add SonarQube Scanner
 - Name: Sonar 
 - Save
 
