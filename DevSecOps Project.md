@@ -137,6 +137,12 @@ Manage Jenkins-> System-> SonarQube Servers-> SonarQube Installations-> Add Sona
 - Server URL:http://ipaddress:9000
 - Server authentication token: Sonar (Sonarqube server saved credentials).
 
+◼️Add or Enable SonarQube Scanner tool in Jenkins:
+
+Manage Jenkins-> Tools-> SonarQube Scanner Installations-> Add SoanrQube Scanner
+- Name: Sonar 
+- Save
+
 
 
 
